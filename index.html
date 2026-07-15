@@ -11,34 +11,37 @@
   <!-- Navigation -->
   <nav>
     <div class="logo">Pallavi Wagh</div>
-    <ul class="nav-links">
-      <li><a href="#about">About</a></li>
-      <li><a href="#skills">Skills</a></li>
-      <li><a href="#projects">Projects</a></li>
-      <li><a href="#education">Education</a></li>
-      <li><a href="#contact">Contact</a></li>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#about" onclick="closeMenu()">About</a></li>
+      <li><a href="#skills" onclick="closeMenu()">Skills</a></li>
+      <li><a href="#projects" onclick="closeMenu()">Projects</a></li>
+      <li><a href="#education" onclick="closeMenu()">Education</a></li>
+      <li><a href="#contact" onclick="closeMenu()">Contact</a></li>
     </ul>
+    <div class="hamburger" id="hamburger" onclick="toggleMenu()">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
   </nav>
 
   <!-- Hero Section -->
-   <!-- Hero Section -->
-<section class="hero">
-  <div class="hero-left">
-    <p class="greet">Hi, I am</p>
-    <h1>Pallavi Wagh</h1>
-    <p class="tagline">Electronics & Telecommunication Engineer | Web Developer</p>
-    <p class="hero-desc">I'm passionate about creating user-friendly and responsive websites. I love turning ideas into real-world digital solutions using modern technologies.</p>
-    <div class="social-icons">
-      <a href="https://github.com/waghpallav" target="_blank">🔗 GitHub</a>
-      <a href="mailto:waghpallavi853@gmail.com">✉️ Email</a>
+  <section class="hero">
+    <div class="hero-left">
+      <p class="greet">Hi, I am</p>
+      <h1>Pallavi Wagh</h1>
+      <p class="tagline">Electronics & Telecommunication Engineer | Web Developer</p>
+      <p class="hero-desc">I'm passionate about creating user-friendly and responsive websites. I love turning ideas into real-world digital solutions using modern technologies.</p>
+      <div class="social-icons">
+        <a href="https://github.com/waghpallav" target="_blank">🔗 GitHub</a>
+        <a href="mailto:waghpallavi853@gmail.com">✉️ Email</a>
+      </div>
+      <a href="#contact" class="btn">Contact Me →</a>
     </div>
-    <a href="#contact" class="btn">Contact Me →</a>
-  </div>
-  <div class="hero-right">
-    <img src="profile.jpeg" alt="Pallavi Wagh">
-  </div>
-</section>
-  
+    <div class="hero-right">
+      <img src="profile.jpeg" alt="Pallavi Wagh">
+    </div>
+  </section>
 
   <!-- About Section -->
   <section id="about" class="section">
@@ -127,6 +130,15 @@
   </footer>
 
   <script>
+    function toggleMenu() {
+      document.getElementById('navLinks').classList.toggle('active');
+      document.getElementById('hamburger').classList.toggle('active');
+    }
+    function closeMenu() {
+      document.getElementById('navLinks').classList.remove('active');
+      document.getElementById('hamburger').classList.remove('active');
+    }
+
     const sections = document.querySelectorAll('.section');
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
