@@ -113,5 +113,17 @@
     <p>&copy; 2026 Pallavi Wagh. All rights reserved.</p>
   </footer>
 
+  <script>
+    const sections = document.querySelectorAll('.section');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.style.animationPlayState = 'running';
+        }
+      });
+    }, { threshold: 0.15 });
+    sections.forEach(sec => observer.observe(sec));
+  </script>
+
 </body>
 </html>
